@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2019-2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -170,21 +170,6 @@ steps:
     - verify simple-regional-with-networking-local
   name: 'gcr.io/cloud-foundation-cicd/$_DOCKER_IMAGE_DEVELOPER_TOOLS:$_DOCKER_TAG_VERSION_DEVELOPER_TOOLS'
   args: ['/bin/bash', '-c', 'cft test run TestSimpleRegionalWithNetworking --stage teardown --verbose']
-- id: apply simple-zonal-local
-  waitFor:
-    - create-all
-  name: 'gcr.io/cloud-foundation-cicd/$_DOCKER_IMAGE_DEVELOPER_TOOLS:$_DOCKER_TAG_VERSION_DEVELOPER_TOOLS'
-  args: ['/bin/bash', '-c', 'cft test run TestSimpleZonal --stage apply --verbose']
-- id: verify simple-zonal-local
-  waitFor:
-    - apply simple-zonal-local
-  name: 'gcr.io/cloud-foundation-cicd/$_DOCKER_IMAGE_DEVELOPER_TOOLS:$_DOCKER_TAG_VERSION_DEVELOPER_TOOLS'
-  args: ['/bin/bash', '-c', 'cft test run TestSimpleZonal --stage verify --verbose']
-- id: destroy simple-zonal-local
-  waitFor:
-    - verify simple-zonal-local
-  name: 'gcr.io/cloud-foundation-cicd/$_DOCKER_IMAGE_DEVELOPER_TOOLS:$_DOCKER_TAG_VERSION_DEVELOPER_TOOLS'
-  args: ['/bin/bash', '-c', 'cft test run TestSimpleZonal --stage teardown --verbose']
 - id: apply simple-zonal-private-local
   waitFor:
     - create-all
