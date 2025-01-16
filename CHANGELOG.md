@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Extending the adopted spec, each change should have a link to its corresponding pull request appended.
 
+## [36.0.0](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/compare/v35.0.1...v36.0.0) (2025-01-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **TPG>=6.14:** promote enable_fqdn_network_policy to GA ([#2225](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/issues/2225))
+
+### Features
+
+* **TPG>=6.14:** promote enable_fqdn_network_policy to GA ([#2225](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/issues/2225)) ([2c32408](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/commit/2c3240874f2917364fda17587b21fe6616976173))
+
+
+### Bug Fixes
+
+* node pool creation should depend on necessary firewall rules ([#2245](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/issues/2245)) ([8098489](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/commit/8098489b17bdcadc6ca0f197a771cb1448c63776))
+* remove fuse csi driver from autopilot ([#2218](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/issues/2218)) ([271af34](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/commit/271af340c26fd4d790337aeccadd7bd354c8cfcd))
+
 ## [35.0.1](https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/compare/v35.0.0...v35.0.1) (2025-01-02)
 
 
