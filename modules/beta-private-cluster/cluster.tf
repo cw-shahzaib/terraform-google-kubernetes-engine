@@ -514,9 +514,9 @@ resource "google_container_node_pool" "pools" {
       )) != 0 ? [1] : []
 
       content {
-        cpu_manager_policy   = lookup(each.value, "cpu_manager_policy", "static")
-        cpu_cfs_quota        = lookup(each.value, "cpu_cfs_quota", false)
-        cpu_cfs_quota_period = lookup(each.value, "cpu_cfs_quota_period", false)
+        # cpu_manager_policy   = lookup(each.value, "cpu_manager_policy", "static")
+        # cpu_cfs_quota        = lookup(each.value, "cpu_cfs_quota", false)
+        # cpu_cfs_quota_period = lookup(each.value, "cpu_cfs_quota_period", false)
       }
     }
 
