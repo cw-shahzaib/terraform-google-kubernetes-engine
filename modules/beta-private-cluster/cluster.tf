@@ -507,19 +507,19 @@ resource "google_container_node_pool" "pools" {
 
     boot_disk_kms_key = lookup(each.value, "boot_disk_kms_key", "")
 
-    dynamic "kubelet_config" {
-      for_each = length(setintersection(
-        keys(each.value),
-        ["cpu_manager_policy", "cpu_cfs_quota", "cpu_cfs_quota_period"]
-      )) != 0 ? [1] : []
+    # dynamic "kubelet_config" {
+    #   for_each = length(setintersection(
+    #     keys(each.value),
+    #     ["cpu_manager_policy", "cpu_cfs_quota", "cpu_cfs_quota_period"]
+    #   )) != 0 ? [1] : []
 
-      content {
-        # cpu_manager_policy   = lookup(each.value, "cpu_manager_policy", "static")
-        # cpu_cfs_quota        = lookup(each.value, "cpu_cfs_quota", false)
-        # cpu_cfs_quota_period = lookup(each.value, "cpu_cfs_quota_period", false)
-        cpu_manager_policy   =  "static"
-      }
-    }
+    #   content {
+    #     # cpu_manager_policy   = lookup(each.value, "cpu_manager_policy", "static")
+    #     # cpu_cfs_quota        = lookup(each.value, "cpu_cfs_quota", false)
+    #     # cpu_cfs_quota_period = lookup(each.value, "cpu_cfs_quota_period", false)
+    #     cpu_manager_policy   =  "static"
+    #   }
+    # }
 
     dynamic "linux_node_config" {
       for_each = length(merge(
